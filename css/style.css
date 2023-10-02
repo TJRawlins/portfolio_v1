@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+    --primary-color: #5eead4;
+    --secondary-color: #ebf0fe;
+    --tertiary-color: #7c8db9;
+    --primary-color-opaque: #5eead51a;
+    --opaque: #7c8db907;
+    --opaque: #7c8db91e;
+    --gradient-1: #202f58;
+    --gradient-2: #061224;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins, Helvetica, sans-serif;
+    background: radial-gradient(circle, var(--gradient-1), var(--gradient-2) 100%);
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    height: 100vh;
+}
+
+/* Hide scrollbar but keep functionality */
+.scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+div.solid {
+    margin-left: 35vw;
+    width: 30vw;
+    border-radius: 50%;
+    border-top: 5px solid var(--opaque);
+  }
+
+/* -------------------------- CONTACT -------------------------- */
+
+
+
+#contact.res-group {
+    position: relative;
+    animation: contact-height 5s ease-in-out 1;
+}
+
+@keyframes contact-height {
+    0% {
+        height: 100vh;
+    }
+    50% {
+        height: 100vh;
+    }
+    100% {
+        height: 50vh;
+    }    
+}
+
+#avatar {
+    position: relative;
+    height: 250px;
+    width: 250px;
+    margin-top: 1rem;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+    background: radial-gradient(circle, var(--primary-color) 0%, var(--gradient-1) 100%);
+    background-blend-mode: overlay;
+    background-size: cover;
+}
+
+#avatar::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-image: url("/portfolio/img/tonytoonlight.png");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: cover;
+}
+
+#avatar-wrapper {
+   animation: rotate-in-down-left 2s ease 1;
+}
+
+
+@keyframes rotate-in-down-left {
+    0% {
+      transform-origin: left bottom;
+      transform: rotate(-90deg);
+      opacity: 0;
+    }
+    100% {
+      transform-origin: left bottom;
+      transform: rotate(0);
+      opacity: 1;
+    }
+  }
+
+@keyframes avatar-roll {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px) rotate(-180deg);
+    }
+    100% {
+        transform: translateX(0) rotate(-0deg);
+    }
+    
+}
+
+#contact-title {
+    margin: 0.25rem 0 .5rem 0;
+    color: var(--tertiary-color);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+#contact-text {
+    display: flex;
+    gap: 1rem;
+}
+
+#contact-text i {
+    font-size: 1.5rem;
+    margin-right: .5rem;
+    color: var(--tertiary-color);
+}
+
+#contact-text span {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:max-content;
+    /* transform: rotate(90deg); */
+    font-size: 4rem;
+    color: var(--tertiary-color);
+    z-index: -5;
+}
+
+/* #contact-text a:hover span {
+    display: inline-block;
+} */
+
+#contact-text a:hover i {
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* GROUPS */
+.res-group {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.res-group h1 {
+    margin: 1.5rem  0;
+}
+
+.res-group h1 i {
+    color: var(--tertiary-color);
+    margin-right: 1rem;
+}
+
+
+/* TECHNOLOGY */
+
+#item-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#item-container div {
+    background-color: var(--primary-color-opaque);
+    border-radius: 20px;
+    padding: .5rem 1rem;
+    margin: 0.5rem;
+    color: var(--primary-color);
+    transition: 0.2s ease-in;
+}
+
+#item-container div:hover {
+    cursor: pointer;
+    color: rgba(6,18,36,1);
+    background-color: var(--primary-color);
+}
+
+/* WORK & EDUCATION */
+
+.work-group {
+    position: relative;
+    display: flex;
+    width: 480px !important;
+    height: auto;
+    max-height: 55px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 5rem;
+    width: 60vw;
+    cursor: pointer;
+}
+
+.work-group:nth-child(even) {
+    margin-left: -15%;
+}
+.work-group:nth-child(odd) {
+    margin-left: 15%;
+}
+
+.work-group:hover {
+    width: 50% !important;
+    margin-left: 0;
+    border-radius: 10px;
+    box-shadow: #ffffff1a 0px 1px 1px 0px inset, #32325d40 0px 50px 100px -20px, #0000004d 0px 30px 60px -30px;
+    background-color: var(--gradient-1);
+    max-height: 500px;
+    transition: all .5s ease-out;
+}
+
+.work-group ul {
+    list-style-type: none;
+    margin-left: 25px;
+    opacity: 0;
+}
+
+.work-group:hover ul {
+    opacity: 1;
+    transition: all 1s ease-out;
+    transition-delay: 0.5s;
+}
+
+.work-group ul li {
+    position: relative;
+    height: 0;
+}
+
+.work-group:hover ul li {
+    height: 100%;
+}
+
+.work-group ul li i {
+    position: absolute;
+    top: 4px;
+    left: -25px;
+    margin-right: 0.5rem;
+}
+
+.work-group > i {
+    position: absolute;
+    top: -5px;
+    transform: rotate(180deg);
+    color: var(--tertiary-color);
+    font-size: 4rem;
+}
+
+.work-group > i.left {
+    left: -70px;
+}
+
+.work-group > i.right {
+    right: -50px;
+    transform: scaleY(-1);
+}
+
+.work-group:hover > i {
+    display: none;
+}
+
+.work-group h3 {
+    display: flex;
+    flex-direction: column;
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: .5rem;
+}
+
+.work-group h3 .text-separator {
+    margin: 0.5rem;
+    opacity: 0;
+}
+
+.work-group:hover h3 {
+    font-size: 1rem;
+    flex-direction: row;
+}
+
+.work-group:hover .text-separator {
+    opacity: 1;
+    transition-delay: .35s;
+}
+
+.work-group h5 {
+    min-width: 150px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    color: var(--tertiary-color);
+    margin-right: 2rem;
+}
+
+.work-group ul {
+    color: var(--tertiary-color);
+}
+
+/* FOOTER */
+footer {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--opaque);
+    padding: 1.5rem 0;
+    margin-bottom: 0;
+}
+
+footer i {
+    color: var(--primary-color);
+    margin-right: .5rem;
+    font-size: larger;
+}
+
+/* MOUSE SHADOW */
+div#mouse-shadow {
+    width: 35rem;
+    height: 35rem;
+    background-color: var(--gradient-1);
+    opacity: 0.5;
+    filter: blur(80px);
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    transition: 0.1s ease-out;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: -1;
+}
