@@ -78,7 +78,7 @@ div.solid {
     left: 5%;
     width: 90%;
     height: 90%;
-    background-image: url("/portfolio_v1/img/tonytoonlight.png");
+    background-image: url("https://raw.githubusercontent.com/TJRawlins/portfolio_v1/main/img/tonytoonlight.png");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
