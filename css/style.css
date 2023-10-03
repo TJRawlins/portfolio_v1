@@ -78,7 +78,7 @@ div.solid {
     left: 5%;
     width: 90%;
     height: 90%;
-    background-image: url("/portfolio/img/tonytoonlight.png");
+    background-image: url("/portfolio_v1/img/tonytoonlight.png");
     background-repeat: no-repeat;
     background-position: 50% 0;
     background-size: cover;
@@ -101,17 +101,6 @@ div.solid {
       opacity: 1;
     }
   }
-
-@keyframes avatar-roll {
-    0% {
-        opacity: 0;
-        transform: translateX(-300px) rotate(-180deg);
-    }
-    100% {
-        transform: translateX(0) rotate(-0deg);
-    }
-    
-}
 
 #contact-title {
     margin: 0.25rem 0 .5rem 0;
